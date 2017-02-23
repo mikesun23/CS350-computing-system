@@ -1,0 +1,248 @@
+CS350 hw3 
+problem 1: simulator results
+
+	a. Lambda = 5.0 and Ts = 0.15 and simulation time = 1000
+
+
+	analysis result:
+
+		utilization = lambda*Ts = 5*0.15 = 0.75
+		q = utilization/(1-utilization) = 0.75/(1-0.75) = 3
+		w = q-utilization = 3-0.75 = 2.25
+
+		tq = q/lambda = 3/5 = 0.6
+		tw = w/lambda = 2.25/5 = 0.45
+		ts = 0.15
+
+
+	simulator results:
+		utilization = 0.7517141800049103
+		q = 3.272328985362939
+		w = 2.283937884702314
+
+		tq = 0.6071304129414485
+		tw = 0.4567875769404628
+		ts = 0.15034283600098208
+
+	comparison:
+		i ran the simulation 100 times and get the average for all q, w, tq, ts, tw. And it seems that the results are very close to the 
+		analytic results. The only annoying difference that I couldn't figure out is that w seems always 1 less than q. But in the formular it should be about 0.75 less than 1. I used tw*lambda
+		to calculate w instead of record the (queue.size - 1) from every monitor event. The gap should close to 0.75. 
+
+
+
+
+	b. Lambda = 6.0, Ts = 0.15, simulation time = 1000
+		
+
+	analysis results:
+		utilization = lambda * Ts = 6.0*0.15 = 0.9
+		q = utilization/(1-utilization) = 0.9/0.1 = 9
+		w = q-utilization = 9-0.9 = 8.1
+
+		tq = q/lambda = 9/6 = 1.5
+		tw = w/lambda = 8.1/6 = 1.35
+		ts = 0.15
+
+	simulator results:
+		utilization: 0.9027083493240271
+		w = 8.301785534546019
+		q = 9.126292283516666
+		Tw = 1.3836309224243364
+		Tq = 1.5340823139783428
+		Ts = 0.15045139155400453
+
+	conclusion:
+		same as above.
+
+
+	c. Lambda = 6.0, Ts = 0.2, simulation time =1000
+
+		utilization = lambda *ts = 6*0.2 = 1.2
+		q = utilization/(1-utilization) = 1.2/-0.2 
+
+
+		lambda = 6, 
+		mu = 1/ts = 1/0.2 = 5
+
+		lambda > mu 
+		so the utilization should be greater than 1
+
+		which means that Tq and Tw could be infinite large if the running time is infinite. 
+
+		Also, queue would be stack up very quickly and waiting line 
+		would be infinitely long.
+
+
+
+		utilization: 1.2117739471734303
+		w = 1522.7424994931132
+		q = 1854.4780369584973
+		Tw = 253.79041658218554
+		Tq = 253.99237890671284
+		Ts = 0.20196232452890506
+
+		we can tell that the q, and w are very large and we also could predict that if in the real world the time is infite, the queue and waiting line could be infite. 
+	
+
+Problem 2 
+	
+	a. K = 2, Lambda = 5, Ts = 0.15 and simulation time = 1000
+		STATISTICS OF RUN
+		requests: 3809
+		reject probability: 0.3181937516408506
+		serviced: 3822
+		utilization: 0.7488132834340204
+		w = 0.32406320512536746
+		q = 1.664050235478807
+		Tw = 0.06481264102507349
+		Tq = 0.2145752977118772
+		Ts = 0.1497626566868041
+
+	b. K = 2, Lambda = 6, Ts = 0.15 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 4161
+		reject probability: 0.43782290039649163
+		serviced: 4147
+		utilization: 0.9220180142079799
+		w = 0.4497542271697822
+		q = 1.9081263564022184
+		Tw = 0.07495903786163037
+		Tq = 0.22862870689629392
+		Ts = 0.1536696690346633
+
+	c. K = 2, Lambda = 6, Ts = 0.20 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 3679
+		reject probability: 0.6253567060741949
+		serviced: 3641
+		utilization: 1.1881049230799272
+		w = 0.6496264680327518
+		q = 2.321889590771766
+		Tw = 0.10827107800545864
+		Tq = 0.306288565185447
+		Ts = 0.19801748717998788
+
+	d. K = 4, Lambda = 5, Ts = 0.15 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 4566
+		reject probability: 0.12122207621550592
+		serviced: 4560
+		utilization: 0.7577521303151854
+		w = 0.8996727262819122
+		q = 1.9973684210526317
+		Tw = 0.17993454525638244
+		Tq = 0.3314849713194195
+		Ts = 0.15155042606303706
+
+	e. K = 4, Lambda = 6, Ts = 0.15 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 5090
+		reject probability: 0.1893909626719057
+		serviced: 5080
+		utilization: 0.8901823037379225
+		w = 1.1833365596460377
+		q = 2.357283464566929
+		Tw = 0.19722275994100627
+		Tq = 0.3455864772306593
+		Ts = 0.14836371728965375
+
+	f. K = 4, Lambda = 6, Ts = 0.20 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 4349
+		reject probability: 0.38939986203724997
+		serviced: 4424
+		utilization: 1.1634723047802529
+		w = 2.00714123034778
+		q = 3.376356238698011
+		Tw = 0.3345235383912966
+		Tq = 0.5284355891880065
+		Ts = 0.19391205079670878
+
+	g. K = 10, Lambda = 5, Ts = 0.15 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 4890
+		reject probability: 0.012167689161554193
+		serviced: 4934
+		utilization: 0.7413127173806833
+		w = 1.8090489420392268
+		q = 2.834211593027969
+		Tw = 0.3618097884078454
+		Tq = 0.5100723318839833
+		Ts = 0.14826254347613665
+
+	h. K = 10, Lambda = 6, Ts = 0.15 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 5702
+		reject probability: 0.05146865409907935
+		serviced: 5742
+		utilization: 0.8775198714004059
+		w = 3.0828618027387353
+		q = 4.117903169627308
+		Tw = 0.5138103004564559
+		Tq = 0.660063612356523
+		Ts = 0.14625331190006766
+
+	i. K = 10, Lambda = 6, Ts = 0.20 and simulation time = 1000
+
+		STATISTICS OF RUN
+		requests: 4888
+		reject probability: 0.24509001636661212
+		serviced: 4856
+		utilization: 1.1890537048881928
+		w = 7.066751246833994
+		q = 8.240115321252059
+		Tw = 1.1777918744723324
+		Tq = 1.3759674919537017
+		Ts = 0.19817561748136547
+
+
+
+
+
+Problem 3
+
+(20 Points) The settings for Lambda and Ts for problem #1 (parts a, b, and c) are similar to the corresponding parts in problem #2 for K=2, 4, and 10. Comparing the results you obtained from the simulations in problems 2 and 3, answer the following questions:
+
+	a. What relationship do you see between K (the size of the buffer) and the utilization? Does this make sense?
+	b. What relationship do you see between K (the size of the buffer) and the rejection probability? Does this make sense?
+	c. What relationship do you see between K (the size of the buffer) and Tq? Does this make sense?
+
+Note: Recall that for M/M/1, the buffer size is infinite...
+
+
+Answers:
+
+	a. as the queue size is increasing, the utilization is decreasing. this makes sense because as the size of queue is getting larger, it is harder to fullfil the queue so the utilization is lower. 
+
+	b. it is very clear that as the size of queue increasing, the rejection probability is decreasing. it makes perfect sense because as the queue can take more requests so it is less likely to reject the new requests.
+
+	c. as the queue size is increasing, tq is also increasing, it is very easy to see that because when queue is small the waiting time will be short with the same average service time. Therefore the total time tq is shorter when queue is small. when queue becomes large, it can take more people and more people are waiting which increases the waiting time, therefore the total time per person(request) in the queue is increased.
+
+
+
+
+conclusion: 
+	Althrough it is pretty hard to write the first system simulator, but i have to say, I learned a lot by going through all steps of running a simulator. 
+
+	Thank you very much!!!
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+P0,P1,,,
+0,12282,,,
+5475,17286,,,
+9816,21800,,,
+14382,24946,,,
+19109,29311,,,
+4094,10438,,,
+10079,14174,,,
+18059,19050,,,
+25210,21683,,,
+34090,24215,,,
+38614,30680,,,
+41973,34343,,,
+,,,,
+,,,,
+18408.4166666667,21684,average,,
+13904.8981524061,7470.91370826645,standard deviation,,
+12,12,n,,
+1.96,1.96,95% zscore,,
+7867.4367575191,4227.0673597489,margin of error,,
+
+Data from Zetian Wu, email:ztwu@bu.edu
+my laptop was down because I used it for data mining for two days straight day and night. My code from 3d runs no problem, but the terminal just seems won't compile any further on my new changes of the file. 
